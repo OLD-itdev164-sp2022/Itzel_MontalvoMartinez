@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+});
+
 module.exports = {
   siteMetadata: {
     title: `Gatsby Default Starter`,
@@ -6,13 +10,13 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
+    //`gatsby-plugin-react-helmet`,
+    //`gatsby-plugin-image`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: '2pwduils424y',
-        accessToken: 'jmA04EPWTKCjZRADonxBKh155RxVBI1v4upvMVqG_ik',
+        spaceId: `{gatsby-source-contentful}`,
+        accessToken: `${process.env.ACCESS_TOKEN}`
        // name: `images`,
         //path: `${__dirname}/src/images`,
       },
