@@ -13,6 +13,8 @@ import styled, { ThemeProvider } from 'styled-components'
 import { Gray } from './themes/Gray'
 import Header from "./header"
 import GlobalStyle from './GlobalStyle'
+import { Main } from './Main'
+import { Footer } from './Footer'
 
 
 const Content = styled.div`
@@ -39,15 +41,15 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title || `Title`} />
       <Content>
         <main>{children}</main>
-        <footer
-          style={{
+        <Footer
+          /*style={{
             marginTop: `2rem`,
-          }}
+          }}*/
         >
           © {new Date().getFullYear()}, Built with
           {` `}
           <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
+        </Footer>
       </Content>
     </ThemeProvider>
       /*<div
