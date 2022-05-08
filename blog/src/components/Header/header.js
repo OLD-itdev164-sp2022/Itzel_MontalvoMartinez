@@ -2,7 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import styled from 'styled-components'
+import { Search } from 'styled-icons/feather'
 import { H1 } from '../Heading'
+import { IconButton } from '../Button'
 import { Section } from '../Section'
 
 //import * as React from "react"
@@ -10,7 +12,8 @@ import { Section } from '../Section'
 //import { Link } from "gatsby"
 
 const Outer = styled.header`
-  background: ${props => props.theme.header.backgroundColor};
+  //background: ${props => props.theme.header.backgroundColor};
+  background: ${({ theme }) => theme.variats.header.primary.backgroundColor};
   margin-bottom: 1.45rem;
 `
 
@@ -44,7 +47,7 @@ const Header = ({ siteTitle }) => (
       </H1>
       </Section>
       <Section width={1/12}>
-        Search
+        <IconButton icon={<Search />} variant='contrast' />
       </Section>
     </Section>
     </Inner>
